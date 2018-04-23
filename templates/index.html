@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+  <title>comments</title>
+
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.42/js/uikit-icons.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/static/main.css">
+  <script src="/static/main.js"></script>
+</head>
+
+<body>
+
+  <!-- First level only -->
+
+  <div class="uk-section" id="article2">
+    <div id="{{ article.id }}" class="uk-container uk-container-small">
+      <h4>Article with first level only</h4>
+      <p>{{ article.content }}</p>
+      <div class="actions">
+        <a class="comment-add" rel="article">Comment</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="uk-section comments-list" id="for-article1">
+  </div>
+
+  <!-- Full threads -->
+
+  <div class="uk-section uk-section-muted" id="article2">
+    <div id="{{ article.id }}" class="uk-container uk-container-small">
+      <h4>Article with full threads</h4>
+      <p>{{ article.content }}</p>
+      <div class="actions">
+        <a class="comment-add" rel="article">Comment</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="uk-section uk-section-muted comments-list" id="for-article2">
+  </div>
+
+  <!-- Single comment with thread -->
+
+  <div class="uk-section" id="comment">
+    <div class="uk-container uk-container-small">
+      <h4>Single comment with thread</h4>
+    </div>
+  </div>
+
+  <div class="uk-section comments-list" id="for-comment">
+  </div>
+
+  <!-- By person -->
+
+  <div class="uk-section uk-section-muted" id="person">
+    <div class="uk-container uk-container-small">
+      <h4>History by {{ person.name }}</h4>
+    </div>
+  </div>
+
+  <div class="uk-section uk-section-muted comments-list" id="for-person">
+  </div>
+
+  <!-- Log for comment -->
+
+  <div class="uk-section" id="person">
+    <div class="uk-container uk-container-small">
+      <h4>Log by one comment</h4>
+    </div>
+  </div>
+
+  <div class="uk-section logs-list" id="for-log">
+  </div>
+
+  <!-- Download data -->
+
+  <div class="uk-section uk-section-muted" id="download">
+    <div class="uk-container uk-container-small">
+      <h4>Download XML data</h4>
+
+      <form class="uk-form-horizontal" method="post" action="/comment/download/">
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">From</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="date_from" value="01.01.2018">
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">To</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="date_to" value="31.12.2018">
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">article_id</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="article_id">
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">person_id</label>
+          <div class="uk-form-controls">
+            <input class="uk-input" type="text" name="person_id">
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <div class="uk-form-controls">
+            <button class="uk-button uk-button-primary uk-button-small">Download</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Add form -->
+
+  <div id="form-add">
+    <form>
+      <textarea class="uk-textarea"></textarea>
+      <input type="hidden" name="article_id" value="">
+      <input type="hidden" name="comment_id" value="">
+      <button class="uk-button uk-button-primary uk-button-small">Post</button>
+    </form>
+  </div>
+
+  <!-- Edit form -->
+
+  <div id="form-edit">
+    <form>
+      <textarea class="uk-textarea"></textarea>
+      <input type="hidden" name="comment_id" value="">
+      <button class="uk-button uk-button-primary uk-button-small">Save</button>
+    </form>
+  </div>
+
+</body>
+</html>

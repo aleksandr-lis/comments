@@ -1,0 +1,64 @@
+button {
+  text-transform: capitalize !important;
+}
+div.uk-container-small {
+    max-width: 500px;
+}
+div.comments-list, div.logs-list {
+  padding-top: 0;
+}
+div.comments-list p, div.logs-list p {
+  margin-bottom: 0;
+}
+div.logs-list p {
+  background-color: #fafafa;
+  padding: 10px;
+  margin: 0;
+  margin-right: 1%;
+  width: 45%;
+  float: left;
+}
+div.comments-list div, div.logs-list div {
+  padding-bottom: 20px;
+}
+div.comments-list div span, div.logs-list div span {
+  margin-right: 15px;
+  font-size: 80%;
+  color: #ccc;
+}
+div.comments-list div.childs {
+  padding: 10px 0 0 10px;
+  margin-top: 10px;
+  margin-left: 30px;
+  border-left: 2px solid rgba(0,0,0, 0.05);
+}
+div.comments-list div.childs div:last-child {
+  padding-bottom: 0;
+}
+div.actions {
+  display: block;
+  padding-bottom: 0;
+}
+div.actions a {
+  margin-right: 15px;
+  font-size: 60%;
+}
+div#form-add, div#form-edit {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px 0;
+  display: none;
+}
+div#form-add textarea, div#form-edit textarea {
+  height: 100px;
+}
+div#form-add button, div#form-edit button {
+  margin-top: 10px;
+}
+form.uk-form-horizontal label.uk-form-label {
+  text-align: right;
+  width: 100px;
+}
+form.uk-form-horizontal div.uk-form-controls {
+  margin-left: 115px;
+}
