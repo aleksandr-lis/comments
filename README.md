@@ -1,6 +1,6 @@
 # HowTo
 
-create database comments with owner = "postgres" template = "template1" tablespace = "pg_default";
+DB: create database comments with owner=postgres template=template1 tablespace=pg_default;
 
 $ python3 main.py migrate
 
