@@ -12,15 +12,16 @@ class Index(Base):
 
     @tornado.gen.coroutine
     def get(self):
-        cur = yield self.pg.execute(
+        article_fut = self.pg.execute(
             'select * from article where id = 1'
         )
-        article = cur.fetchone()
-
-        cur = yield self.pg.execute(
+        person_fut = self.pg.execute(
             'select * from person where id = 1'
         )
-        person = cur.fetchone()
+
+        yield [article_fut, person_fut]
+        article = article_fut.result().fetchone()
+        person = person_fut.result().fetchone()
 
         self.render(
             'index.html',
